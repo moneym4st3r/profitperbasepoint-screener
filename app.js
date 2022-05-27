@@ -39,7 +39,8 @@ function fnClickAddRow(tableData) {
 );
 }
 setInterval(function() {
-    pairListRaw = decodeURIComponent(getUrlParameter("pairs"));
+    $("#pairList").val(decodeURIComponent(getUrlParameter("pairs")))
+    pairListRaw = $('#pairList').val();
     pairList = pairListRaw.split(';');
     console.log(pairList);
     getData(pairList);
