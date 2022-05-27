@@ -39,7 +39,7 @@ function fnClickAddRow(tableData) {
 );
 }
 setInterval(function() {
-    pairListRaw = getUrlParameter("pairs");
+    pairListRaw = decodeURIComponent(getUrlParameter("pairs"));
     pairList = pairListRaw.split(';');
     console.log(pairList);
     getData(pairList);
