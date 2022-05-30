@@ -18,6 +18,8 @@ function getData(pairList) {
 var giCount = 1;
 
 $(document).ready(function() {
+
+    $("#pairList").hide();
 	$('#example').dataTable();
 } );
 
