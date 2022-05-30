@@ -86,12 +86,13 @@ function render(data, pairList) {
 
                 }
                 stringofDigits += '1';
+                let bppop = ((1/parseFloat(price))*parseFloat(stringofDigits)*100).toFixed(3)
                 let ppbp = (parseFloat(price) - parseFloat(stringofDigits)) / parseFloat(stringofDigits);
                 let volpppbp = parseFloat(volume) / ppbp;
                 let ppvol =  parseFloat(volume)/parseFloat(price) ;
                 let ppvolpppbp = ppvol/ppbp;
-                html += '<tr><td>' + symbol + '</td><td>' + parseFloat(price) + '</td><td>' + parseFloat(stringofDigits) + '</td><td>' + parseInt(ppbp) + '</td><td>' + parseFloat(volume) + '</td><td>' + volpppbp + '</td><td>' + volpppbp + '</td><td>' + ppvolpppbp + '</td></tr>';
-                tabledata.push({ "symbol": symbol, "price": parseFloat(price),"Dvolatility":parseFloat( Dvolatility)+"%", "stringofDigits": parseFloat(stringofDigits), "ppbp": parseInt(ppbp), "volume": parseFloat(vol), "volpppbp": parseFloat(volpppbp).toFixed(2), "ppvol": parseFloat(ppvol).toFixed(2), "ppvolpppbp": parseFloat(ppvolpppbp).toFixed(2) });
+                html += '<tr><td>' + symbol + '</td><td>' + parseFloat(price) + '</td><td>' + parseFloat(stringofDigits) + '</td><td>' + parseInt(ppbp) + '</td><td>' + parseFloat(volume) + '</td><td>' + volpppbp + '</td><td>' + volpppbp + '</td><td>' + ppvolpppbp + '</td> <td>'+bppop+'</td></tr>';
+                tabledata.push({ "symbol": symbol, "price": parseFloat(price),"Dvolatility":parseFloat( Dvolatility)+"%", "stringofDigits": parseFloat(stringofDigits), "ppbp": parseInt(ppbp), "volume": parseFloat(vol), "volpppbp": parseFloat(volpppbp).toFixed(2), "ppvol": parseFloat(ppvol).toFixed(2), "ppvolpppbp": parseFloat(ppvolpppbp).toFixed(2) , "bppop": bppop});
                 console.log(ppbp)
             }
         });
